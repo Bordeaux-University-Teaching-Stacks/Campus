@@ -1,0 +1,21 @@
+.invisible {
+    display: none;
+}
+
+.centered {
+    text-align: center
+}
+
+;
+.information {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.shadow-text {
+    text-shadow: 1px 1px 1px black;
+}

@@ -1,0 +1,66 @@
+.search{ float: right; }
+.findSomeone{ font-family: "Sniglet", cursive; font-size: 16px; border-radius: 2px; padding: 5px 10px; color: #CCCCCC; height: 23px; width: 300px; border: 1px solid #A1A1A1;}
+.findSomeone:focus{ color: #333333; }
+ul{ list-style: none; }
+.user{
+	float: left;
+	color: #333333;
+	text-align: center;
+	font-family: 'Sniglet', cursive;
+	font-size: 20px;
+	background: url("../img/grey.png");
+	border-radius: 3px 3px 0 0;
+	width: 200px;
+	height: auto;
+	margin:  40px 20px;
+}
+
+.user p{
+	margin: 0;
+}
+
+.user .name{
+	margin: 0;
+	padding-bottom: 15px;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+.user .user-img{
+	margin: -35px auto 15px auto;
+	width: 125px;
+	height: 125px;
+	padding: 3px;
+	background: #ffffff;
+	border: 1px solid #CCCCCC;
+}
+
+.user img{
+	width: 125px;
+	height: 125px;	
+}
+
+.user .study{
+	font-size: 14px; color: #777777;
+	height: 50px;
+	padding: 10px 0;
+	border-top: 1px solid rgb(81, 115, 139);
+	background: rgba(81, 115, 139, 1);
+	
+	box-shadow: inset 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+	color: #F1F1F1;
+}
+
+.user .study p{
+	height: 50px;
+	padding: 0 5px 0 55px;
+	background: url("../img/study.png") no-repeat 5px 0;
+}
+
+.hidden{
+	display: none;
+}
+
+.clearer{
+	clear: both;
+}
