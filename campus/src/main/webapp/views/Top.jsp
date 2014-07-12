@@ -14,8 +14,6 @@
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-2.0.3.js" />"></script>
     <script type="text/javascript" src="<c:url value="/resources/js/jquery.fancybox.js" />"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/user.js" />"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/trombinoscope.js" />"></script>
     
 	<title>Campus : par des étudiants, pour des étudiants</title>
 </head>

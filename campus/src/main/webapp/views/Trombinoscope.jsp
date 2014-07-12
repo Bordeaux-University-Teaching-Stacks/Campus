@@ -112,3 +112,5 @@
 </div>
 
 <jsp:include page="Bottom.jsp" />
+
+<script type="text/javascript" src="<c:url value="/resources/js/trombinoscope.js" />"></script>

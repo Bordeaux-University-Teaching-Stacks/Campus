@@ -50,3 +50,5 @@
 	</div>
 	
 	<jsp:include page="Bottom.jsp"/>
+	
+	<script type="text/javascript" src="<c:url value="/resources/js/user.js" />"></script>

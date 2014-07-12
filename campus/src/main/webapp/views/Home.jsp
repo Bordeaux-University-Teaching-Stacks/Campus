@@ -19,7 +19,7 @@
     <script type="text/javascript" src="<c:url value="/resources/js/jquery.fancybox.js" />"></script>
     <script type="text/javascript" src="<c:url value="/resources/js/jquery.dateinput.js" />"></script>
     <script type="text/javascript" src="<c:url value="/resources/js/jquery.scrollit.js" />"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/index.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/home.js" />"></script>
 </head>
 <body>
 <div id="page-wrapper">
