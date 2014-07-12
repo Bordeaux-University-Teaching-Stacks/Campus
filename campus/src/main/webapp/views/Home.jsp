@@ -49,7 +49,7 @@
                         <div id="head_info">
                             <!-- <input type="checkbox" id="remember_me" name="remember_me" value="rememberme" /> 
                             <label for="remember_me">Se souvenir de moi</label> | <a href="#"> J'ai oublié mon mot de passe</a><br/>-->
-                            <br/>${error}
+                            <br/><b><i><font color="white">${error}</font></i></b>
                         </div>
                     </form:form>
                 </div>
@@ -145,49 +145,70 @@
     	<div id="fancy_subscribe_normal_mode">
     		${ warning }
 	        <div id="subscribe">
-	            <form:form action="/user/subscribe" commandName="userForm" method="POST">
-	                <label for="name">Nom de famille : </label>
-	                <form:input path="name"/>
-	                <form:errors path="name" cssclass="error"/><br/>
-	                
-	                <label for="surname">Prénom : </label>
-	                <form:input path="surname"/>
-	                <form:errors path="surname" cssclass="error"/><br/>
-
-					<label for="birth">Date de naissance : </label>
-	                <form:input path="birth" cssclass="date"/>
-	                <form:errors path="birth" cssclass="error"/><br/>
-	                
-	                <label for="sex">Vous êtes : </label>
-	                <form:radiobutton path="sex" value="M" checked="checked"/>Un homme
-	                <form:radiobutton path="sex" value="F"/>Une femme
-	                <form:errors path="sex" cssclass="error"/><br/>
-	                
-					<label for="email">Email : </label>
-	                <form:input path="email"/>
-	                <form:errors path="email" cssclass="error"/><br/>
-					
-					<label for="password">Mot de passe : </label>
-	                <form:password path="password"/>
-	                <form:errors path="password" cssclass="error"/><br/>
-
-					<label for="campusOptions">Campus : </label>
-    				<form:select path="campus.id" id="campusOptions">
-    					<c:forEach items="${campus}" var="campus">
-	                    	<form:option value="${campus.id}">${campus.name}</form:option>
-	                    </c:forEach>
-    				</form:select>
-    				<form:errors path="campus" cssclass="error"></form:errors><br/>
- 
- 					<label for="newsletter">Je souhaite recevoir la newsletter </label>
-    				<form:checkbox path="newsletter"></form:checkbox>
-    				<form:errors path="newsletter" cssclass="error"></form:errors>
-    				
-    				<label for="legals">J'accepte les <a href="#">conditions générales d'utilisation</a> </label>
-    				<form:checkbox path="legals"></form:checkbox>
-    				<form:errors path="legals" cssclass="error"></form:errors>
-
-	                <input type="submit" name="subscribe" id="subscribe" value="S'inscrire" class="button"/>
+	            <form:form id="formUser" action="/user/subscribe" commandName="userForm" method="POST">
+	            	<table>
+	            		<tr>
+	            			<td width="300"><label for="name">Nom de famille <font color="red"><font color="red">*</font></font> : </label></td>
+	            			<td width="230"><form:input path="name"/></td>
+	            			<td width="270"><form:errors path="name" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="surname">Prénom <font color="red">*</font> : </label></td>
+	            			<td><form:input path="surname"/></td>
+	            			<td><form:errors path="surname" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="birth">Date de naissance <font color="red">*</font> : </label></td>
+	            			<td><form:input path="birth" class="date"/></td>
+	            			<td><form:errors path="birth" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="sex">Vous êtes <font color="red">*</font> : </label></td>
+	            			<td>
+	            				<form:radiobutton path="sex" value="M" checked="checked"/>Un homme
+	                			<form:radiobutton path="sex" value="F"/>Une femme
+	            			</td>
+	            			<td><form:errors path="sex" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="email">Email <font color="red">*</font> : </label></td>
+	            			<td><form:input path="email"/></td>
+	            			<td><form:errors path="email" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="password">Mot de passe <font color="red">*</font> : </label></td>
+	            			<td><form:password path="password"/></td>
+	            			<td><form:errors path="password" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td><label for="campusOptions">Campus <font color="red">*</font> : </label></td>
+	            			<td>
+	            				<form:select path="campus.id" id="campusOptions">
+    								<c:forEach items="${campus}" var="campus">
+	                    				<form:option value="${campus.id}">${campus.name}</form:option>
+	                    			</c:forEach>
+    							</form:select>
+	            			</td>
+	            			<td><form:errors path="campus" class="error"/></td>
+	            		</tr>
+	            		<tr>
+	            			<td colspan="3">
+	            				<form:checkbox path="newsletter"/>
+	            				<label for="newsletter">Je souhaite recevoir la newsletter </label>
+	            				<form:errors path="newsletter" class="error"/>
+	            			</td>
+	            		</tr>
+	            		<tr>
+	            			<td colspan="3">
+	            				<form:checkbox path="legals"/>
+	            				<label for="legals">J'accepte les <a href="#">conditions générales d'utilisation <font color="red">*</font> </a> </label>
+	            				<form:errors path="legals" class="error"/>
+	            			</td>
+	            		</tr>
+	            		<tr>
+	            			<td colspan="3" align="right"><input type="button" name="subscribe" id="subscribeButton" value="S'inscrire" class="button" onclick="subscribeAJAX()"/></td>
+	            		</tr>
+	            	</table>
 	            </form:form>
 	        </div>
         </div>

@@ -13,7 +13,7 @@ import com.intuitiv.campus.service.CampusService;
 @Controller
 @SessionAttributes("campus")
 @RequestMapping("/")
-public class HomeController extends CampusController {
+public class HomeController extends AbstractController {
 
 	@Autowired
 	private CampusService campusService;

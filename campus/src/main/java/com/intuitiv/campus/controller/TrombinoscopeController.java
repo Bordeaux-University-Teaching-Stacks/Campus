@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @SessionAttributes("userSession")
 @RequestMapping("/trombinoscope")
-public class TrombinoscopeController extends CampusController {
+public class TrombinoscopeController extends AbstractController {
 
 	private static final String HOME_PAGE = "Home";
 	private static final String TROMBI_PAGE = "Trombinoscope";

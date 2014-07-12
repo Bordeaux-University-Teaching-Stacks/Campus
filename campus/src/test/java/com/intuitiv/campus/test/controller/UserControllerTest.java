@@ -72,7 +72,7 @@ public class UserControllerTest extends AbstractControllerTest {
 	}
 
 	@Test
-	public void testUserSucceedSubscribePageRendered() throws Exception {
+	public void testUserFailedSubscribePageRendered() throws Exception {
 		request.setRequestURI("/user/subscribe");
 		request.setMethod("POST");
 		request.addParameter("email", "email");
@@ -82,6 +82,25 @@ public class UserControllerTest extends AbstractControllerTest {
 		request.addParameter("sex", "male");
 		request.addParameter("campus", "1");
 		request.addParameter("birth", "13/11/1988");
+		request.addParameter("legals", "false");
+		request.addParameter("newsletter", "true");
+
+		assertViewName(getResponsePage(), "Home");
+	}
+
+	@Test
+	public void testUserSucceedSubscribePageRendered() throws Exception {
+		request.setRequestURI("/user/subscribe");
+		request.setMethod("POST");
+		request.addParameter("email", "email@test.fr");
+		request.addParameter("password", "Password13");
+		request.addParameter("name", "nomTest");
+		request.addParameter("surname", "prenomTest");
+		request.addParameter("sex", "M");
+		request.addParameter("campus.id", "2");
+		request.addParameter("birth", "01/11/1988");
+		request.addParameter("legals", "true");
+		request.addParameter("newsletter", "true");
 
 		assertViewName(getResponsePage(), "User");
 	}

@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,7 +22,7 @@ import com.intuitiv.campus.service.UserService;
 @Controller
 @SessionAttributes("userSession")
 @RequestMapping("/user")
-public class UserController extends CampusController{
+public class UserController extends AbstractController{
 
 	private static final Logger LOGGER = Logger.getLogger(UserController.class);
 	private static final String HOME_PAGE = "Home";
@@ -53,10 +54,12 @@ public class UserController extends CampusController{
 		} else {
 			error("L'email saisi n'existe pas.");
 		}
+		page.addObject("userForm", new User());
 		return page;
 	}
 
 	@RequestMapping(value="/subscribe", method = RequestMethod.POST)
+	@ResponseBody
 	public ModelAndView userSubscribe(@Valid @ModelAttribute("userForm") User userForm, BindingResult bindingResult) throws CampusException {
 		page.setViewName(HOME_PAGE);
 		if(!bindingResult.hasErrors()) {

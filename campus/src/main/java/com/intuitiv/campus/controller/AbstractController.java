@@ -2,7 +2,7 @@ package com.intuitiv.campus.controller;
 
 import org.springframework.web.servlet.ModelAndView;
 
-public abstract class CampusController {
+public abstract class AbstractController {
 
 	/**
 	 * The response page to render

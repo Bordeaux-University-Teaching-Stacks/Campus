@@ -39,6 +39,8 @@ public class UserTest {
 		user.setCampus(campus);
 		user.setPhoto(PHOTO);
 		user.setSex('M');
+		user.setLegals(true);
+		user.setNewsletter(true);
 
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		VALID_BIRTH_DATE = formatter.parse(VALID_BIRTH_DATE_STRING);
@@ -120,6 +122,16 @@ public class UserTest {
 		calendar.add(Calendar.DATE, 1);
 		user.setBirth(calendar.getTime());
 		assertTrue(user.getAge() == 9);
+	}
+
+	@Test
+	public void testLegalsAccepted() {
+		assertTrue(user.getLegals());
+	}
+
+	@Test
+	public void testNewsletterAccepted() {
+		assertTrue(user.getNewsletter());
 	}
 
 }

@@ -19,3 +19,13 @@
 .shadow-text {
     text-shadow: 1px 1px 1px black;
 }
+
+.error {
+	font-size:10px;
+	color:#ff2a2a;
+}
+
+label {
+	font-size:13px;
+	font-weight:700;
+}

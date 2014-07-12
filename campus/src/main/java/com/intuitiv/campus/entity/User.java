@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -52,18 +53,16 @@ public class User {
 	 * Email of the user
 	 */
 	@Column(name = "email", unique = true, nullable = false)
-	@Email
-	@NotNull
-	@NotEmpty
+	@Email(message="L''email fourni n'est pas valide")
+	@NotEmpty(message="Obligatoire")
 	private String email;
 
 	/**
 	 * Password of the user
 	 */
 	@Column(name = "password", nullable = false)
-	@Pattern(regexp=PASSWORD_PATTERN)
-	@NotNull
-	@NotEmpty
+	@Pattern(regexp=PASSWORD_PATTERN, message="Doit contenir 1 lettre majuscule et faire entre 6 et 12 caractères")
+	@NotEmpty(message="Obligatoire")
 	private String password;
 
 	/**
@@ -71,24 +70,22 @@ public class User {
 	 */
 	@Column(name = "birth", nullable = false)
 	@DateTimeFormat(pattern=BIRTH_PATTERN)
-	@Past
-	@NotNull
+	@Past(message="Date de naissance invalide")
+	@NotNull(message="Obligatoire")
 	private Date birth;
 
 	/**
 	 * Name of the user
 	 */
 	@Column(name = "name", nullable = false)
-	@NotNull
-	@NotEmpty
+	@NotEmpty(message="Obligatoire")
 	private String name;
 
 	/**
 	 * Surname of the user
 	 */
 	@Column(name = "surname", nullable = false)
-	@NotNull
-	@NotEmpty
+	@NotEmpty(message="Obligatoire")
 	private String surname;
 
 	/**
@@ -115,6 +112,7 @@ public class User {
 	 * Tell if the user accepted the legals
 	 */
 	@Column(name="legals")
+	@AssertTrue(message="Obligatoire")
 	private boolean legals;
 
 	/**
