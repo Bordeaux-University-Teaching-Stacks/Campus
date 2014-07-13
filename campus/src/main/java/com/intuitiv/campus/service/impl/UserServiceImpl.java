@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User save(User user) {
+		user.setPassword(CipherUtils.encrypt(user.getPassword()));
 		return userDao.find(userDao.save(user));
 	}
 

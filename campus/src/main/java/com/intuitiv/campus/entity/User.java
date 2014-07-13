@@ -61,7 +61,7 @@ public class User {
 	 * Password of the user
 	 */
 	@Column(name = "password", nullable = false)
-	@Pattern(regexp=PASSWORD_PATTERN, message="Doit contenir 1 lettre majuscule et faire entre 6 et 12 caractères")
+	@Pattern(regexp=PASSWORD_PATTERN, message="Doit contenir 1 lettre majuscule, 1 chiffre et faire entre 6 et 12 caractères")
 	@NotEmpty(message="Obligatoire")
 	private String password;
 

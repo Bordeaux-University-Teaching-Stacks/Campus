@@ -231,7 +231,12 @@ a:hover {
     float: left;
     margin-top: 20px;
     width: 1024px;
-    text-align: center;
+    text-align: left;
+}
+
+#footer-content p {
+	padding : 30px;
+	text-align : center;
 }
 
 #footer-content hr {

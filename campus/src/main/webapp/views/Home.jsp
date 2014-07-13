@@ -120,23 +120,14 @@
 	    	obtenir des informations sur les entreprises de votre secteur ou encore travailler à plusieurs en ligne devient un jeu d'enfant.</h2>
     	 </div>
     </div>
-    <!-- <div id="footer-wrapper">
+    <div id="footer-wrapper" class="invisible">
         <div id="footer-content">
-            <hr/>
-            <p>
-                © Campus 2013 - Tous droits réservés - <a
-                    href="mailto:hotline@thecampus.fr?subject=[Campus\Support] Saisissez le sujet de votre demande de support ici">
-                Support
-            </a> |
-                <a href="mailto:hotline@thecampus.fr?subject=[Campus\Contact] Saisissez le sujet de votre demande de contact ici">
-                    Contact
-                </a>
-            </p>
+			<h2>Ils parlent de Campus </h2>
+			<p><img src="<c:url value="/resources/img/parteners.png"/>"/></p>
+			<p>© 2014 Campus</p>
         </div>
-    </div>-->
+    </div>
 </div>
-
-<!-- FANCYBOXES -->
 
 <!-- SUBSCRIBE FANCYBOX -->
 <div class="invisible">
@@ -212,11 +203,6 @@
 	            </form:form>
 	        </div>
         </div>
-        <!-- ><div id="fancy_subscribe_socialnetwork">
-        	<div id="fb-root"></div>
-        	<script type="text/javascript" src="<c:url value="/resources/js/javascript.facebook.login.js" />"></script>
-        	<a href="#" onclick="fb_login();"><img src="<c:url value="/resources/img/facebooklogin.png"/>" border="0" alt=""></a><br/>
-        </div>-->
     </div>
 </div>
 </body>
