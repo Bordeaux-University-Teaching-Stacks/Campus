@@ -5,11 +5,16 @@ import java.util.List;
 
 import com.intuitiv.campus.common.HibernateSessionUtils;
 
-
+/**
+ * <b>AbstractDao</b> is the CRUD template for DAO implementation
+ * @author Meidi
+ *
+ * @param <T> : the type of the object to access in the database
+ * @param <PK> : the primary key of the object to access in the database
+ */
 public abstract class AbstractDao<T, PK extends Serializable> extends HibernateSessionUtils implements Dao<T, PK> {
 
-	/**
-	 * Find an object by PK
+	/** {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -17,8 +22,7 @@ public abstract class AbstractDao<T, PK extends Serializable> extends HibernateS
 		return (T) getHibernateTemplate().get(c, id);
 	}
 
-	/**
-	 * Find all objects
+	/** {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -26,8 +30,7 @@ public abstract class AbstractDao<T, PK extends Serializable> extends HibernateS
 		return getHibernateTemplate().find("from " + c.getCanonicalName());
 	}
 
-	/**
-	 * Save an object
+	/** {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -35,16 +38,14 @@ public abstract class AbstractDao<T, PK extends Serializable> extends HibernateS
 		return (PK) getHibernateTemplate().save(obj);
 	}
 
-	/**
-	 * Update an object
+	/** {@inheritDoc}
 	 */
 	@Override
 	public void update(T obj) {
 		getHibernateTemplate().update(obj);
 	}
 
-	/**
-	 * Delete an object
+	/** {@inheritDoc}
 	 */
 	@Override
 	public void delete(T obj) {

@@ -10,14 +10,26 @@ import org.springframework.web.servlet.ModelAndView;
 import com.intuitiv.campus.entity.User;
 import com.intuitiv.campus.service.CampusService;
 
+/**
+ * <b>HomeController</b> route every action made from the "Home" page
+ * @author Meidi
+ *
+ */
 @Controller
 @SessionAttributes("campus")
 @RequestMapping("/")
 public class HomeController extends AbstractController {
 
+	/**
+	 * The campus service provider
+	 */
 	@Autowired
 	private CampusService campusService;
 
+	/**
+	 * The default constructor to initialize the page
+	 * @return modelAndView
+	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView home(){
 		ModelAndView model = new ModelAndView("Home");

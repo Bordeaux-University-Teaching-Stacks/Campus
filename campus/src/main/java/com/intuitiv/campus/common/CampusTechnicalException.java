@@ -1,6 +1,10 @@
 package com.intuitiv.campus.common;
 
-
+/**
+ * <b>CampusTechnicalException</b>Catch every uncaught technical exception
+ * @author Meidi
+ *
+ */
 public class CampusTechnicalException extends Exception {
 
 	private static final long serialVersionUID = 1L;
@@ -18,7 +22,7 @@ public class CampusTechnicalException extends Exception {
 	/**
 	 * Constructeur.
 	 * 
-	 * @param message message associé à l'erreur.
+	 * @param message : message associé à l'erreur.
 	 */
 	public CampusTechnicalException(String message) {
 		super(message);
@@ -36,7 +40,7 @@ public class CampusTechnicalException extends Exception {
 	/**
 	 * Constructeur.
 	 * 
-	 * @param ex cause de l'exception
+	 * @param ex : cause de l'exception
 	 */
 	public CampusTechnicalException(Throwable ex) {
 		super(ex);
@@ -45,8 +49,8 @@ public class CampusTechnicalException extends Exception {
 	/**
 	 * Constructeur.
 	 * 
-	 * @param message message associé à l'erreur.
-	 * @param ex cause de l'exception
+	 * @param message : message associé à l'erreur.
+	 * @param ex : cause de l'exception
 	 */
 	public CampusTechnicalException(String message, Throwable ex) {
 		super(message, ex);

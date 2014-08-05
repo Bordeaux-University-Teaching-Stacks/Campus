@@ -18,17 +18,17 @@ public class DateUtilsTest {
 
 	@Test
 	public void testStringToDate() {
-		Assert.assertTrue(DateUtils.stringToDate(DATE_STRING_INFERIOR).before(DateUtils.stringToDate(DATE_STRING_SUPERIOR)));
+		Assert.assertTrue(DateUtils.castStringToDate(DATE_STRING_INFERIOR).before(DateUtils.castStringToDate(DATE_STRING_SUPERIOR)));
 	}
 
 	@Test
 	public void testWrongStringToDate() {
-		Assert.assertNull(DateUtils.stringToDate(WRONG_DATE));
+		Assert.assertNull(DateUtils.castStringToDate(WRONG_DATE));
 	}
 
 	@Test
 	public void testNow() {
-		Assert.assertTrue(DateUtils.now().equals(new Date()));
+		Assert.assertTrue(DateUtils.getCurrentDate().equals(new Date()));
 	}
 
 }

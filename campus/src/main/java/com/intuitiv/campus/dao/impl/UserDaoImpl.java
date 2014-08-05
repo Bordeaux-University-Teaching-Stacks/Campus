@@ -10,26 +10,44 @@ import com.intuitiv.campus.dao.UserDao;
 import com.intuitiv.campus.entity.Campus;
 import com.intuitiv.campus.entity.User;
 
+/**
+ * <b>UserDaoImpl</b> is an implementation of the UserDao interface<br/>
+ * It stands for Data Access on User Objects
+ * @author Meidi
+ *
+ */
 @Repository("UserDao")
 public class UserDaoImpl extends AbstractDao<User, Long> implements UserDao {
 
+	/**
+	 * The object to write in the log file
+	 */
 	private static final Logger LOGGER = Logger.getLogger(UserDaoImpl.class);
 
+	/**
+	 * The default constructor
+	 */
 	public UserDaoImpl() {
 		super();
 	}
 
+	/** {@inheritDoc}
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<User> getAllUsersByCampus(Campus campus) {
 		return getHibernateTemplate().find("from Campus c where c.id =?", campus.getId());
 	}
 
+	/** {@inheritDoc}
+	 */
 	@Override
 	public User find(Long id) {
 		return this.find(User.class, id);
 	}
 
+	/** {@inheritDoc}
+	 */
 	@Override
 	public User findByEmail(String email) {
 		try{

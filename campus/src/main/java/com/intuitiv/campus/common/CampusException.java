@@ -1,5 +1,11 @@
 package com.intuitiv.campus.common;
 
+/**
+ * <b>CampusException</b> catch the non technical exceptions if they aren't caught
+ * @author Meidi
+ *
+ */
+
 public class CampusException extends Exception {
 	private static final long serialVersionUID = 1L;
 

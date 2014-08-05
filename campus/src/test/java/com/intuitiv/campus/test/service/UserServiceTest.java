@@ -64,16 +64,6 @@ public class UserServiceTest extends AbstractServiceTest {
 	}
 
 	@Test
-	public void testPasswordConfirmMatchPassword() {
-		Assert.assertTrue(userService.passwordConfirmMatchPassword("Test13", "Test13"));
-	}
-
-	@Test
-	public void testPasswordConfirmDoesntMatchPassword() {
-		Assert.assertFalse(userService.passwordConfirmMatchPassword("Test13", "pass"));
-	}
-
-	@Test
 	public void testSave() throws ParseException {
 		Campus campus = new Campus();
 		campus.setId(1);

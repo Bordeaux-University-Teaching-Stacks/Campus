@@ -21,6 +21,9 @@ public class TrombinoscopeTest extends AbstractControllerTest{
 
 	@Test
 	public void testTrombinoscopeWithNoSession() throws Exception {
+		request.setRequestURI("/user/disconnect/");
+		request.setMethod("GET");
+		getResponsePage();
 		request.setRequestURI("/trombinoscope/");
 		request.setMethod("GET");
 

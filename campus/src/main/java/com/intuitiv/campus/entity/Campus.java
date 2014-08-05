@@ -17,6 +17,11 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+/**
+ * Campus entity with validators
+ * @author Meidi
+ *
+ */
 @Entity
 @Table(name = "campus", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "id_campus") })

@@ -21,6 +21,11 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ * User entity with validators
+ * @author Meidi
+ *
+ */
 @Entity
 @Table(name = "user")
 public class User {
@@ -121,10 +126,23 @@ public class User {
 	@Column(name="newsletter")
 	private boolean newsletter;
 
+	/**
+	 * Default constructor
+	 */
 	public User() {
 
 	}
 
+	/**
+	 * Explicit constructor
+	 * @param name : the user's name
+	 * @param surname : the user's surname
+	 * @param birth : the user's birth date
+	 * @param sex : the user's sex
+	 * @param email : the user's email
+	 * @param password : the user's password
+	 * @param campus : the user's campus
+	 */
 	public User(String name, String surname, Date birth, char sex,
 			String email, String password, Campus campus) {
 		this.name = name;
@@ -224,6 +242,10 @@ public class User {
 		this.newsletter = newsletter;
 	}
 
+	/**
+	 * This calculate and return the age of the user's
+	 * @return the user's calculated age
+	 */
 	public long getAge() {
 		Calendar birth = Calendar.getInstance();
 		Calendar today = Calendar.getInstance();

@@ -7,6 +7,11 @@ import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * <b>Cipher</b> encrypt / decrypt strings
+ * @author Meidi
+ *
+ */
 public class CipherUtils {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(CipherUtils.class);
@@ -17,8 +22,8 @@ public class CipherUtils {
 
 	/**
 	 * Encrypt a data
-	 * @param strToEncrypt
-	 * @return
+	 * @param strToEncrypt : string to encrypt
+	 * @return encrypted string
 	 */
 	public static String encrypt(String strToEncrypt) {
 		try {
@@ -36,8 +41,8 @@ public class CipherUtils {
 
 	/**
 	 * Decrypt a Cipher data
-	 * @param strToDecrypt
-	 * @return
+	 * @param strToDecrypt :  string to decrypt
+	 * @return encrypted string
 	 */
 	public static String decrypt(String strToDecrypt) {
 		try {
