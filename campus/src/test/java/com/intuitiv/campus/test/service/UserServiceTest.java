@@ -72,4 +72,16 @@ public class UserServiceTest extends AbstractServiceTest {
 		Assert.assertNotNull(userService.save(user));
 	}
 
+	@Test
+	public void testUpdate() throws ParseException {
+		Campus campus = new Campus();
+		campus.setId(2);
+		User user = userService.getUserByMail("update@campus.fr");
+		user.setEmail("testUpdateOk@test.com");
+		userService.update(user);
+
+		Assert.assertEquals(user.getEmail(), "testUpdateOk@test.com");
+
+	}
+
 }
